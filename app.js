@@ -26,7 +26,7 @@
 
 
 // Working with Express JS Server remember '/' is for local host 
-// NOTE: action="/answer" is where the form is going to submit the answer!
+// NOTE: action="/answer" is where the form is going to submit the answer! Remember GET,POST for method
 let express = require('express');
 let ourApp = express();
 ourApp.get('/', function(req, res) {
@@ -38,5 +38,10 @@ ourApp.get('/', function(req, res) {
        </form>
     `);
 });
+
+ourApp.post('/answer', function(req, res) {
+    res.send('Thank you for submitting the form!');
+});
+
 ourApp.listen(3000);
 
