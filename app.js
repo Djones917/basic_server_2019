@@ -28,9 +28,9 @@
 // Working with Express JS Server remember '/' is for local host 
 let express = require('express');
 let ourApp = express();
-ourApp,get('/', function(req, res) {
+ourApp.get('/', function(req, res) {
     res.send(`
-       <form action="/answer" method="POST>
+       <form action="/answer" method="POST">
         <p>What color is the sky on a clear and sunny day?</p>
         <input name="skyColor" autocomplet="off">
         <button>Submit Answer</button>
@@ -38,5 +38,4 @@ ourApp,get('/', function(req, res) {
     `);
 });
 ourApp.listen(3000);
-// trying to run test
 
