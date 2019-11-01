@@ -40,7 +40,18 @@ ourApp.get('/', function(req, res) {
 });
 
 ourApp.post('/answer', function(req, res) {
-    res.send('Thank you for submitting the form!');
+    //res.send('Thank you for submitting the form!');
+    if(req.body.skyColor == 'blue') {
+        res.send(`
+          <p>Congrats, that is the correct answer!</p>
+          <a href="/">back to homepage!</a>
+        `);
+    } else {
+        res.send(`
+          <p>Sorry, that is incorrect.</p>
+          <a href="/">back to homepage!</a>
+        `);
+    }
 });
 
 // Just to clearify get and post!
