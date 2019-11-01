@@ -43,5 +43,12 @@ ourApp.post('/answer', function(req, res) {
     res.send('Thank you for submitting the form!');
 });
 
+// Just to clearify get and post!
+ourApp.get('/answer', function (req, res) {
+    res.send('Are you lost there is nothing to see here!');
+});
+
+
+
 ourApp.listen(3000);
 
