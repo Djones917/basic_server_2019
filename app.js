@@ -28,7 +28,13 @@
 // Working with Express JS Server remember '/' is for local host 
 // NOTE: action="/answer" is where the form is going to submit the answer! Remember GET,POST for method
 let express = require('express');
-let ourApp = express();
+let ourApp = express(express.urlencoded({extended: false}));
+
+
+// Adding this for req.body.skyColor 
+ourApp.use();
+
+
 ourApp.get('/', function(req, res) {
     res.send(`
        <form action="/answer" method="POST">
