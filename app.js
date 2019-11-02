@@ -28,11 +28,13 @@
 // Working with Express JS Server remember '/' is for local host 
 // NOTE: action="/answer" is where the form is going to submit the answer! Remember GET,POST for method
 let express = require('express');
-let ourApp = express(express.urlencoded({extended: false}));
+let ourApp = express();
 
 
-// Adding this for req.body.skyColor 
-ourApp.use();
+
+// This is to get the request value it's in the express documentation
+ourApp.use(express.urlencoded({extended: false}));
+
 
 
 ourApp.get('/', function(req, res) {
@@ -47,7 +49,7 @@ ourApp.get('/', function(req, res) {
 
 ourApp.post('/answer', function(req, res) {
     //res.send('Thank you for submitting the form!');
-    if(req.body.skyColor == 'blue') {
+    if(req.body.skyColor.toUpperCase() == 'BLUE') {
         res.send(`
           <p>Congrats, that is the correct answer!</p>
           <a href="/">back to homepage!</a>
